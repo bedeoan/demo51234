@@ -1,16 +1,16 @@
 <template>
   <div class="text-center bg-white pb-3 rounded-b-lg">
     <div>
-      <img width="100%" :src="url" />
+      <img class="w-full" :src="url" />
     </div>
     <div class="my-2">
-      <div class="text-red-500 justify-center flex row text-sm font-bold">
+      <div class="text-red-500 flex justify-center font-extrabold text-xs">
         <div class="mr-2">
           {{ title }}
         </div>
         <div
           v-if="isVideo"
-          class="justify-center align-center bg-black rounded-lg"
+          class="flex justify-center items-center bg-black rounded-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,6 @@
             stroke="black"
             width="32"
             height="32"
-            class="size-5"
           >
             <path
               stroke-linecap="round"
@@ -31,7 +30,7 @@
         </div>
       </div>
       <div class="font-bold flex justify-center">
-        <div class="text-center description">
+        <div class="text-center text-base w-11/12">
           {{ description }}
         </div>
       </div>
@@ -40,7 +39,6 @@
 </template>
 
 <script setup>
-const test = "testing";
 const props = defineProps({
   url: String,
   title: String,
@@ -48,9 +46,3 @@ const props = defineProps({
   isVideo: Boolean,
 });
 </script>
-
-<style>
-.description {
-    font-size: 2cqw; width: 90%
-}
-</style>
